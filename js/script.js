@@ -51,7 +51,7 @@ shirtSelectElement.addEventListener('change', (event) => {
   var shirtImage = document.querySelectorAll('.shirt-image');
   console.log(shirtImage);
   // 3c) Create a `for` loop to iterate over the shirt `img` elements in the variable above
-  for(let i = 0; i <= 0; i++){
+  for(let i = 0; i < shirtImage.length; i++){
   // 3d) Inside the loop, create the following two variables:
     // One to store the alt attribute of the image at the loop's current iteration, like so: YourImgVariableName[i].alt
     var imageAltAttribute = shirtImage[i].alt;
@@ -61,6 +61,14 @@ shirtSelectElement.addEventListener('change', (event) => {
     console.log(`selected shirt: ${selectedShirt}`);
   // 3e) Log out the two variables, refresh the page, and select a new shirt to confirm their values
   // 3f) Still inside the loop, create an if/else statement 
+    if(imageAltAttribute === selectedShirt){
+      const image = document.querySelectorAll('img');
+      image[i].classList.add('chosen');
+    } else{
+      const image = document.querySelectorAll('img');
+      image[i].classList.remove('chosen');
+      console.log(`not the chosen shirt`);
+    }
   // 3g) If the two variables you just created are equal, use the `.classList.add()` method to add the 'chosen' className to the img element
   // 3h) Else use the `.classList.remove()` method to remove the 'chosen' className from the from the img element
   }
